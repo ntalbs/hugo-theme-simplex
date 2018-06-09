@@ -1,0 +1,12 @@
+{{ if .Site.Params.Social }}
+<div class="social button-box">
+  {{ if .Site.Params.Social.twitter }}
+  <a class="twitter-follow-button" href="https://twitter.com/{{ .Site.Params.Social.Twitter}}" data-show-count="false">Follow @{{ .Site.Params.Social.Twitter }}</a>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  {{ end }}
+  {{ if .Site.Params.Social.github }}
+  <a class="github-button" href="https://github.com/{{ .Site.Params.Social.github }}" aria-label="Follow @ntalbs on GitHub">Follow @{{ .Site.Params.Social.github }}</a>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  {{ end}}
+</div>
+{{ end }}

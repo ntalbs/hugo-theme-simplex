@@ -1,0 +1,35 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+{{ partial "progress" . }}
+{{ partial "sitedesc" . }}
+<section class="section">
+  <div class="container">
+    <h2>{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</h2>
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+    {{ if .Site.Params.Social }}
+    <div class="social button-box">
+      {{ if .Site.Params.Social.twitter }}
+      <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <a class="twitter-follow-button" href="https://twitter.com/{{ .Site.Params.Social.Twitter}}" data-show-count="false">Follow @{{ .Site.Params.Social.Twitter }}</a>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <nav id="article-nav">
+      {{ with .PrevInSection }}
+      <a class="article-nav-link-wrap previous" href="{{.Permalink}}" id="article-nav-newer"> {{.Title}}</a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a class="article-nav-link-wrap next" href="{{.Permalink}}" id="article-nav-older"> {{.Title}}</a>
+      {{ end }}
+    </nav>
+  </div>
+</section>
+
+{{ partial "disqus" . }}
+{{ partial "footer" . }}
+{{ partial "mathjax" . }}
