@@ -4,8 +4,7 @@
     {{ partial "header" . }}
   </head>
   <body>
-    {{ partial "nav" . }}
-    {{ partial "page-head" . }}
+    {{ partial "page-top" . }}
     <main class="container" role="main">
       {{ range sort .Paginator.Pages }}
       <article class="post">
@@ -37,6 +36,7 @@
       {{ end }}
     </main>
     {{ partial "pager" . }}
+    {{ partial "page-bottom" . }}
     {{ partial "footer" . }}
     {{ partial "mathjax" . }}
   </body>
