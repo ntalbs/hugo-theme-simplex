@@ -6,12 +6,13 @@
   <body>
     {{ partial "page-top" . }}
     <main class="container" role="main">
-      <h1 class="title">{{ .Title }}</h1>
-
       <!-- Ranges through content/post/*.md -->
       {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
-      <h3>{{ .Key }}</h3>
-      <ul>
+
+      <p class="archive-ul" data-toggle="collapse" data-target="#{{ .Key }}">
+        {{ .Key }}&nbsp;<b class="caret"></b>
+      </p>
+      <ul id="{{ .Key }}" class="in">
         {{ range .Pages }}
         <li class="listing-item">
           <p class="post-title">
