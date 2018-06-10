@@ -1,22 +1,21 @@
-{{ partial "header" . }}
-{{ partial "page-top" . }}
-
-<section class="section">
-  <div class="container">
-    <h1 class="title">{{ .Title }}</h1>
-
-    <div class="widget">
-      <ul class="tag-box inline list-unstyled">
-        {{ $data := .Data }}
-        {{ range $key, $value := .Data.Terms.Alphabetical }}
-        <li>
-          <a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">
-            {{ $value.Name }}
-            <sup>{{ $value.Count }}</sup>
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "header" . }}
+  </head>
+  <body>
+    {{ partial "page-top" . }}
+    <main class="container" role="main" >
+      <div class="widget">
+        <ul class="tag-box inline list-unstyled">
+          {{ $data := .Data }}
+          {{ range $key, $value := .Data.Terms.Alphabetical }}
+          <li>
+            <a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}<sup>{{ $value.Count }}</sup></a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
