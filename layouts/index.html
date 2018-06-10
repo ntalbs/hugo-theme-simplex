@@ -6,26 +6,36 @@
   <body>
     {{ partial "nav" . }}
     {{ partial "page-head" . }}
-    <section class="section">
-      <div class="container">
-        {{ range sort .Paginator.Pages }}
-        <article>
-          <h2>{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</h2>
-          <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
-          <div class="content">
-            {{ .Summary | plainify | safeHTML }}
-            {{ if .Truncated }}
-            <p>
-              <a class="button is-link" href="{{ .Permalink }}" style="height:28px">
-                Read more...
-              </a>
-            </p>
+    <main class="container" role="main">
+      {{ range sort .Paginator.Pages }}
+      <article class="post">
+        <header class="post-header">
+          <span class="post-meta">
+            <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</time>
+            on
+            {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relLangURL }}">{{ . }}</a>
             {{ end }}
-          </div>
-        </article>
-        {{ end }}
-      </div>
-    </section>
+          </span>
+          <h1 class="post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}
+          </h1>
+        </header>
+        <section class="post-excerpt">
+          <p>
+            {{ .Summary | plainify | safeHTML }}
+          </p>
+          {{ if .Truncated }}
+          <p>
+            <a class="button is-link" href="{{ .Permalink }}" style="height:28px">
+              Read more...
+            </a>
+          </p>
+          {{ end }}
+        </section>
+      </article>
+      {{ end }}
+    </main>
     {{ partial "pager" . }}
     {{ partial "footer" . }}
     {{ partial "mathjax" . }}

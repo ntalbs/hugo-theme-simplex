@@ -415,7 +415,8 @@ ul.pagination li {
   margin-left: auto;
   margin-right: auto;
 }
-.content {
+.post-content,
+.post-excerpt {
   font-family: serif;
 }
 .post-footer {
