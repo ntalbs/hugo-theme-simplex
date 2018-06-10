@@ -17,7 +17,7 @@
             {{ end }}
           </p>
           <h1 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}
+            {{ .Title }} {{ if .Draft }} ::Draft{{ end }}
           </h1>
         </header>
         <section class="post-content">
