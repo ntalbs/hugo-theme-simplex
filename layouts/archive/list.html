@@ -1,42 +1,32 @@
-{{ partial "header" . }}
-{{ partial "page-top" . }}
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "header" . }}
+  </head>
+  <body>
+    {{ partial "page-top" . }}
+    <main class="container" role="main">
+      <h1 class="title">{{ .Title }}</h1>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title">{{ .Title }}</h1>
-
-    <!-- Ranges through content/post/*.md -->
-    {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
-    <h3>{{ .Key }}</h3>
-    <ul>
-      {{ range .Pages }}
-      <li class="listing-item">
-        <p class="post-title">
-          <small class="post-meta">
-            <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
-              {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
-            </time>
-          </small>
-          <a href="{{.Permalink}}">{{.Title}}</a>
-        </p>
-      </li>
+      <!-- Ranges through content/post/*.md -->
+      {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+      <h3>{{ .Key }}</h3>
+      <ul>
+        {{ range .Pages }}
+        <li class="listing-item">
+          <p class="post-title">
+            <small class="post-meta">
+              <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
+                {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
+              </time>
+            </small>
+            <a href="{{.Permalink}}">{{.Title}}</a>
+          </p>
+        </li>
+        {{ end }}
+      </ul>
       {{ end }}
-    </ul>
-    {{ end }}
-
-    {{ if .Site.Params.Social }}
-    <div class="social button-box">
-      {{ if .Site.Params.Social.twitter }}
-      <a class="twitter-follow-button" href="https://twitter.com/{{ .Site.Params.Social.Twitter}}" data-show-count="false">Follow @{{ .Site.Params.Social.Twitter }}</a>
-      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-      {{ end }}
-      {{ if .Site.Params.Social.github }}
-      <a class="github-button" href="https://github.com/{{ .Site.Params.Social.github }}" aria-label="Follow @ntalbs on GitHub">Follow @{{ .Site.Params.Social.github }}</a>
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-      {{ end}}
-    </div>
-    {{ end }}
-  </div>
-</section>
-
-{{ partial "footer" . }}
+    </main>
+    {{ partial "footer" . }}
+  </body>
+</html>
