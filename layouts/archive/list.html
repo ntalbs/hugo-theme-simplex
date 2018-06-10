@@ -6,9 +6,11 @@
   <div class="container">
     <h1 class="title">{{ .Title }}</h1>
 
+    <!-- Ranges through content/post/*.md -->
+    {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+    <h3>{{ .Key }}</h3>
     <ul>
-      <!-- Ranges through content/post/*.md -->
-      {{ range .Site.RegularPages }}
+      {{ range .Pages }}
       <li class="listing-item">
         <p class="post-title">
           <small class="post-meta">
@@ -21,6 +23,7 @@
       </li>
       {{ end }}
     </ul>
+    {{ end }}
 
     {{ if .Site.Params.Social }}
     <div class="social button-box">
