@@ -18,10 +18,10 @@
       </div>
 
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <p class="archive-ul" data-toggle="collapse" data-target="#{{ $name }}">
+      <p class="archive-ul" data-toggle="collapse" data-target="#modal-{{ $name }}">
         {{ $name }}&nbsp;<b class="caret"></b>
       </p>
-      <ul id="{{ $name }}" class="in">
+      <ul id="modal-{{ $name }}" class="in">
         {{ range $taxonomy }}
         <li class="listing-item">
           <p class="post-title">
