@@ -8,15 +8,32 @@
     <main class="container" role="main" >
       <div class="widget">
         <ul class="tag-box inline list-unstyled">
-          {{ $data := .Data }}
-          {{ range $key, $value := .Data.Terms.Alphabetical }}
+          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
           <li>
-            <a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}<sup>{{ $value.Count }}</sup></a>
+            <a href="/tags/{{ $name | urlize }}">{{ $name }}<sup>{{ $taxonomy.Count }}</sup></a>
           </li>
           {{ end }}
         </ul>
       </div>
 
+      {{ if eq .Kind "taxonomy" }}
+      <ul>
+        {{ range .Data.Pages }}
+        <li class="listing-item">
+          <p class="post-title">
+            <small class="post-meta">
+              <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
+                {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
+              </time>
+            </small>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{ if eq .Kind "taxonomyTerm"}}
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
       <p class="archive-ul" data-toggle="collapse" data-target="#modal-{{ $name }}">
         {{ $name }}&nbsp;<b class="caret"></b>
@@ -35,6 +52,7 @@
         </li>
         {{ end }}
       </ul>
+      {{ end }}
       {{ end }}
     </main>
     {{ partial "page-bottom" . }}
