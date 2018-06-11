@@ -1,6 +1,22 @@
-{{ partial "header" . }}
-<section>
-  <div>
-    404 Page not found.
-  </div>
-</section>
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "header" . }}
+  </head>
+  <body>
+    {{ partial "page-top" . }}
+    <main class="container" role="main">
+      <article class="post" style="text-align: center;">
+        <section class="post-content">
+          <p style="display:inline-block;font-size:20rem;margin:100px;color:#aaa">404</p>
+          <p>페이지를 찾을 수 없습니다. 혹시 URL에 <code>yyyy/mm/dd</code> 형식의 날짜가 포함되어 있다면 <code>/mm/dd</code>를 삭제해 보기 바랍니다.</p>
+          <ul>
+            <li><code>/2010/08/13/meaning-of-default/</code> → <code>/2010/meaning-of-default/</code></li>
+            <li><code>/2015/11/03/project-euler-044/</code> → <code>/2015/project-euler-044/</code></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    {{ partial "page-bottom" . }}
+  </body>
+</html>
