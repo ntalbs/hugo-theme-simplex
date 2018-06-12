@@ -10,7 +10,7 @@
         <ul class="tag-box inline list-unstyled">
           {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
           <li>
-            <a href="/tags/{{ $name | urlize }}">{{ $name }}<sup>{{ $taxonomy.Count }}</sup></a>
+            <a href="/tags/{{ $name }}">{{ $name }}<sup>{{ $taxonomy.Count }}</sup></a>
           </li>
           {{ end }}
         </ul>
