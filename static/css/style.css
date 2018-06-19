@@ -483,6 +483,9 @@ ul.pagination li a {
 .draft {
   color: #ff4500;
 }
+.draft:after {
+  content: ":: draft";
+}
 -moz-selection {
   color: #222;
   background: #d6edff;
