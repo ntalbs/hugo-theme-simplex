@@ -16,7 +16,7 @@
             <a href="{{ "/tags/" | relLangURL }}">{{ . }}</a>
             {{ end }}
           </p>
-          <h1 class="post-title {{ if .Draft }}draft{{ end }}">
+          <h1 class="post-title{{ if .Draft }} draft{{ end }}">
             {{ .Title }}
           </h1>
         </header>
