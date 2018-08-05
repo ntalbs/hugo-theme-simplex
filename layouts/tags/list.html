@@ -17,6 +17,7 @@
       </div>
 
       {{ if eq .Kind "taxonomy" }}
+      <p class="archive-ul">{{ .Title }}</p>
       <ul>
         {{ range .Data.Pages }}
         <li class="listing-item">
