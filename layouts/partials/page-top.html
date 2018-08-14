@@ -7,7 +7,7 @@
     <div class="navbar-items collapsed" id="nav-items">
       <ul>
         {{ range .Site.Params.menu.items }}
-        <li><a href="/{{ .path }}">{{ .label }}</a></li>
+        <li><a href="{{ .path }}">{{ .label }}</a></li>
         {{ end }}
       </ul>
     </div>
