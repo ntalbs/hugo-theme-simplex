@@ -5,10 +5,6 @@
 (function ($) {
   'use strict'
 
-  // $(document).ready(function () {
-  //   $('.post-content').fitVids()
-  // })
-
   function randomColor () {
     var colors = [
       '#330033', '#003366',
