@@ -13,7 +13,7 @@
             <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</time>
             on
             {{ range .Params.tags }}
-            <a href="/tags/{{ . | lower }}">{{ . }}</a>
+            <a href="/tags/{{ . | lower }}/">{{ . }}</a>
             {{ end }}
           </span>
           <h1 class="post-title">
