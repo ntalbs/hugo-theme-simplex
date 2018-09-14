@@ -2,31 +2,8 @@
 <html>
   <head>
     {{ partial "header" . }}
+    <meta http-equiv="Refresh" content="0; url={{.Site.BaseURL}}/archive/">
   </head>
   <body>
-    {{ partial "page-top" . }}
-    <main class="container" role="main">
-      <h1 class="title">{{ .Title }}</h1>
-
-      <!-- Ranges through content/post/*.md -->
-      {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
-      <h3>{{ .Key }}</h3>
-      <ul>
-        {{ range .Pages }}
-        <li class="listing-item">
-          <p class="post-title">
-            <small class="post-meta">
-              <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
-                {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
-              </time>
-            </small>
-            <a href="{{.Permalink}}">{{.Title}}</a>
-          </p>
-        </li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </main>
-    {{ partial "footer" . }}
   </body>
 </html>
