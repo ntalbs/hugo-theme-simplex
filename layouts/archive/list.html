@@ -22,7 +22,7 @@
                 {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
               </time>
             </small>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <a href="{{ .Permalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a>
           </p>
         </li>
         {{ end }}
