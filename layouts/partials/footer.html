@@ -3,7 +3,4 @@
     <p>{{ .Site.Copyright | safeHTML }}</p>
   </div>
 </section>
-{{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
 <script src={{ "js/index.js" | absURL }} type="text/javascript"></script>
