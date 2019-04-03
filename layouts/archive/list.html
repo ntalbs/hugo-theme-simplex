@@ -7,6 +7,14 @@
   <body>
     {{ partial "page-top" . }}
     <main class="container" role="main">
+      <div class="widget">
+        <ul class="tag-box inline list-unstyled">
+          {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+          <li><a href="/{{ .Key }}/">{{ .Key }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
       <!-- Ranges through content/post/*.md -->
       {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
 

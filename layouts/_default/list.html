@@ -3,8 +3,41 @@
   <head>
     <meta name="robots" content="noindex">
     {{ partial "header" . }}
-    <meta http-equiv="Refresh" content="0; url={{.Site.BaseURL}}/archive/">
+    <!-- <meta http-equiv="Refresh" content="0; url={{.Site.BaseURL}}/archive/"> -->
   </head>
   <body>
+    {{ partial "page-top" . }}
+    <main class="container" role="main">
+      <div class="widget">
+        <ul class="tag-box inline list-unstyled">
+          {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+          <li><a href="/{{ .Key }}/">{{ .Key }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Ranges through content/post/*.md -->
+      {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+      {{ if eq .Key $.Section }}
+      <p class="archive-ul">{{ .Key }}</p>
+      <ul id="{{ .Key }}" class="in">
+        {{ range .Pages }}
+        <li class="listing-item">
+          <p class="post-title">
+            <small class="post-meta">
+              <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
+                {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
+              </time>
+            </small>
+            <a href="{{ .Permalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a>
+          </p>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ end }}
+    </main>
+    {{ partial "page-bottom" . }}
+    {{ partial "footer" . }}
   </body>
 </html>
