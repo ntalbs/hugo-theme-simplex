@@ -34,10 +34,10 @@
           </div>
           {{ end }}
           <nav id="article-nav">
-            {{ with .NextInSection }}
+            {{ with .Next }}
             <a class="article-nav-link-wrap previous" href="{{.Permalink}}" id="article-nav-newer"> {{.Title}}</a>
             {{ end }}
-            {{ with .PrevInSection }}
+            {{ with .Prev }}
             <a class="article-nav-link-wrap next" href="{{.Permalink}}" id="article-nav-older"> {{.Title}}</a>
             {{ end }}
           </nav>
