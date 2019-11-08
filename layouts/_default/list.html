@@ -24,12 +24,12 @@
         {{ range .Pages }}
         <li class="listing-item">
           <p class="post-title">
+            <a href="{{ .Permalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a><br>
             <small class="post-meta">
               <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
                 {{ .Date.Format $.Site.Params.fmt.ISO8601 }}
               </time>
             </small>
-            <a href="{{ .Permalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a>
           </p>
         </li>
         {{ end }}
