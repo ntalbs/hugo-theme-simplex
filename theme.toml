@@ -7,8 +7,8 @@ licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = "Simple theme for hugo"
 homepage = "https://github.com/ntalbs/hugo-theme-simplex/"
 tags = ["blogs", "simple"]
-features = ["highlight.js", "mathjax"]
-min_version = "0.38"
+features = ["mathjax"]
+min_version = "0.60"
 
 [author]
   name = "ntalbs"

@@ -46,7 +46,6 @@
     </main>
     {{ partial "disqus" . }}
     {{ partial "footer" . }}
-    {{ if .Params.code }}{{ partial "highlightjs" . }}{{ end }}
     {{ if .Params.math }}{{ partial "mathjax" . }}{{ end }}
     {{ partial "page-bottom" . }}
   </body>
