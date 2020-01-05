@@ -8,7 +8,7 @@
     {{ partial "page-top" . }}
     <main class="container" role="main">
       {{ range sort .Paginator.Pages }}
-      <article class="post">
+      <article class="post {{ if .Params.math }}with-math{{ end }}">
         <header class="post-header">
           <span class="post-meta">
             <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</time>

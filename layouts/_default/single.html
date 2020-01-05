@@ -7,7 +7,7 @@
     {{ partial "progress" . }}
     {{ partial "page-top" . }}
     <main class="container" role="main">
-      <article class="post">
+      <article class="post {{ if .Params.math }}with-math{{ end }}">
         <header>
           <p class="post-meta">
             <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</time>
