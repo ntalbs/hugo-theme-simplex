@@ -9,6 +9,7 @@
         {{ range .Site.Params.menu.items }}
         <li><a class="unselectable" href="{{ .path }}">{{ .label }}</a></li>
         {{ end }}
+        <li><a id="mode-switch" class="unselectable" href="#"></a></li>
       </ul>
     </div>
   </div>
