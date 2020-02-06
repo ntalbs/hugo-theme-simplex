@@ -19,6 +19,7 @@ body
   line-height 1.6em
   height 100%
   max-height 100%
+  background-color var(--background-color)
 
 .clearfix
   overflow
@@ -32,8 +33,7 @@ h1, h2, h3, h4, h5, h6
   line-height 1
   font-family 'Open Sans', sans-serif
   font-weight bold
-  a
-    color #50585d
+  color var(--secondary)
 
 h1
   font-size 2.8rem
@@ -62,6 +62,7 @@ h6
 
 p
   text-align justify
+  color var(--primary)
 
 a
   color #666
@@ -84,6 +85,9 @@ p, ul, ol, dl
 ol ol, ul ul, ul ol, ol ul
   margin 0.4em 0
 
+li p
+  margin 0
+
 hr
   display block
   height 1px
@@ -105,7 +109,6 @@ blockquote
     text-align left
     margin 0
     font-style normal
-    // color green
     color #444
   small
     display inline-block
@@ -128,9 +131,6 @@ blockquote
 
 .button-box
   text-align right
-
-mark
-  background-color #ffc336
 
 .highlight pre
   padding 5px 10px
@@ -158,22 +158,13 @@ pre
   white-space pre
   word-break normal
   letter-spacing -1px
-
-pre.console
-  font-size 1.296rem
-  padding 10px
-  color #eee
-  background-color #444
-  letter-spacing -1px
-  overflow scroll
-
-div.box
-  margin 10px
-  padding 10px
-  font-size 0.9em
-  border-radius 5px
-  border 1px solid #aaa
-  background-color #f5f5f5
+  .console
+    font-size 1.296rem
+    padding 10px
+    color #eee
+    background-color #444
+    letter-spacing -1px
+    overflow scroll
 
 table
   -moz-box-sizing border-box
@@ -262,27 +253,11 @@ twitter-widget, video
       &:focus, &:hover
         color #eee
 
-.sr-only
-  border 0
-  clip rect(0,0,0,0)
-  height 1px
-  margin -1px
-  overflow hidden
-  padding 0
-  position absolute
-  width 1px
-
 .site-head, .page-head
   position relative
   display table
   width 100%
   height 150px
-
-.blog-title
-  color #fff
-  font-size 6rem
-  font-face bold
-  margin-bottom 0
 
 .blog-description
   font-size 1.6rem
@@ -603,8 +578,6 @@ selection
   font-family 'Open Sans', sans-serif
   font-size 1.5rem
   line-height 1.7em
-  //color #BBC7CC
-  //background #F7FAFB
   color #aaa
   background-color #eee
   text-align center
@@ -655,9 +628,6 @@ selection
     -moz-box-sizing border-box
     box-sizing border-box
     height 150px
-  .blog-title
-    font-size 4rem
-    letter-spacing -1px
   .blog-description
     font-size 1.5rem
     line-height 1.3em
@@ -740,9 +710,6 @@ selection
 
   .site-head, .page-head
     height 100px
-
-  .blog-title
-    font-size 2.5rem
 
   .blog-description
     font-size 1.0rem
