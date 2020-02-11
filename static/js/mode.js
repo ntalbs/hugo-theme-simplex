@@ -1,4 +1,4 @@
-const sun  = '☼'
+const sun  = '☀'
 const moon = '☾'
 const light = 'light'
 const dark  = 'dark'
