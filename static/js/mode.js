@@ -31,6 +31,7 @@ function switchMode (mode) {
     setMode(dark)
     makeDark()
   }
+  resetDisqus()
 }
 
 function makeDark () {
@@ -73,4 +74,6 @@ function makeLight () {
   root.style.setProperty('--footer', "#eee");
 }
 
+function resetDisqus() {
+  DISQUS.reset({reload: true});
 }
