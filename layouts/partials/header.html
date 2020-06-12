@@ -11,6 +11,7 @@
 {{ if .Site.Params.Google.SiteVerification }}
 <meta name="google-site-verification" content="{{ .Site.Params.Google.SiteVerification }}" />
 {{ end }}
+<meta property="og:image" content="https://ntalbs.github.io/images/ntalbs.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Title }}{{ if eq .IsHome false }} {{ .Site.Title }}{{ end }}</title>
 <link rel="shortcut icon" href="/images/favicon.ico">
