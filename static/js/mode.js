@@ -213,7 +213,7 @@ function monokai () {
   root.style.setProperty('--LiteralNumberInteger', '#ae81ff')
   root.style.setProperty('--LiteralNumberIntegerLong', '#ae81ff')
   root.style.setProperty('--LiteralNumberOct', '#ae81ff')
-  root.style.setProperty('--Operator', '#f92672')
+  root.style.setProperty('--Operator', '#f8f8f2')
   root.style.setProperty('--OperatorWord', '#f92672')
   root.style.setProperty('--Comment', '#75715e')
   root.style.setProperty('--CommentHashbang', '#75715e')
