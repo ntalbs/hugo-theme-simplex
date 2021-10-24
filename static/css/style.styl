@@ -324,10 +324,9 @@ ul.pagination
     display block
     margin-left auto
     margin-right auto
+    filter brightness(var(--img-brightness))
     &.invert-safe
       filter invert(var(--invert-amt))
-    &.dim
-      filter brightness(var(--img-brightness))
 
 .post-content, .post-excerpt
   font-family serif
