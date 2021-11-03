@@ -58,7 +58,7 @@ function makeDark () {
   root.style.setProperty('--line', "#444")
   root.style.setProperty('--circle', "#444")
 
-  root.style.setProperty('--navbar-bg', "#242933")
+  root.style.setProperty('--navbar-bg', "#1c2733")
   root.style.setProperty('--footer-bg', "#242933")
 
   root.style.setProperty('--invert-amt', '0.84')
@@ -159,7 +159,7 @@ function xcode() {
 
 function monokai () {
   root.style.setProperty('--Foreground', '#f8f8f2')
-  root.style.setProperty('--Background', '#212d39')
+  root.style.setProperty('--Background', '#1c2733')
   root.style.setProperty('--Error', '#1e0010')
   root.style.setProperty('--Keyword', '#66d9ef')
   root.style.setProperty('--KeywordConstant', '#66d9ef')
