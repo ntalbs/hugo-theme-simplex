@@ -50,6 +50,7 @@ function makeDark () {
   root.style.setProperty('--inline-code-bg', "#212d39")
   root.style.setProperty('--box-fg', "#aaa")
   root.style.setProperty('--box-bg', "#212d39")
+  root.style.setProperty('--progress-bg', 'rgba(0,0,0,0.5)')
 
   root.style.setProperty('--archive-ul', "#888")
   root.style.setProperty('--post-meta', "#666")
@@ -74,6 +75,7 @@ function makeLight () {
   root.style.setProperty('--inline-code-bg', "#eee")
   root.style.setProperty('--box-fg', "#808080")
   root.style.setProperty('--box-bg', "#f5f5f5")
+  root.style.setProperty('--progress-bg', 'rgba(80,80,80,0.5)')
 
   root.style.setProperty('--archive-ul', "#444")
   root.style.setProperty('--post-meta', "#aaa")
