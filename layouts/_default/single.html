@@ -35,10 +35,10 @@
           {{ end }}
           <nav id="article-nav">
             {{ with .Next }}
-            <a class="article-nav-link-wrap previous" href="{{.Permalink}}" id="article-nav-newer"> {{.Title}}</a>
+            <a class="article-nav-link-wrap previous" href="{{.RelPermalink}}" id="article-nav-newer"> {{.Title}}</a>
             {{ end }}
             {{ with .Prev }}
-            <a class="article-nav-link-wrap next" href="{{.Permalink}}" id="article-nav-older"> {{.Title}}</a>
+            <a class="article-nav-link-wrap next" href="{{.RelPermalink}}" id="article-nav-older"> {{.Title}}</a>
             {{ end }}
           </nav>
         </footer>
