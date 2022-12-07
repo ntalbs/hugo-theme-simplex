@@ -11,16 +11,17 @@
 </script>
 <meta charset="UTF-8">
 {{ if .Site.Params.Google.SiteVerification }}
-<meta name="google-site-verification" content="{{ .Site.Params.Google.SiteVerification }}" />
+<meta name="google-site-verification" content="{{ .Site.Params.Google.SiteVerification }}">
 {{ end }}
 
 {{ if eq .IsHome false }}
-<meta name="description" content="{{ .Summary }}" />
-<meta name="og:title" content="{{ .Title }} {{ .Site.Title }}" />
-<meta name="og:description" content="{{ .Summary }}" />
-<meta name="og:url" content="{{ .Permalink }}" />
+<meta name="description" content="{{ .Summary }}">
+<meta name="og:title" content="{{ .Title }} {{ .Site.Title }}">
+<meta name="og:description" content="{{ .Summary }}">
+<meta name="og:url" content="{{ .Permalink }}">
 {{ end }}
 <meta name="og:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{.Params.image}}{{ else }}https://ntalbs.github.io/images/ntalbs.jpg{{ end }}">
+<meta name="twitter:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{.Params.image}}{{ else }}https://ntalbs.github.io/images/ntalbs.jpg{{ end }}">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Title }}{{ if eq .IsHome false }} {{ .Site.Title }}{{ end }}</title>
