@@ -13,7 +13,15 @@
 {{ if .Site.Params.Google.SiteVerification }}
 <meta name="google-site-verification" content="{{ .Site.Params.Google.SiteVerification }}" />
 {{ end }}
-<meta property="og:image" content="https://ntalbs.github.io/images/ntalbs.jpg">
+
+{{ if eq .IsHome false }}
+<meta name="description" content="{{ .Summary }}" />
+<meta name="og:title" content="{{ .Title }} {{ .Site.Title }}" />
+<meta name="og:description" content="{{ .Summary }}" />
+<meta name="og:url" content="{{ .Permalink }}" />
+{{ end }}
+<meta name="og:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{.Params.image}}{{ else }}https://ntalbs.github.io/images/ntalbs.jpg{{ end }}">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Title }}{{ if eq .IsHome false }} {{ .Site.Title }}{{ end }}</title>
 <link rel="shortcut icon" href="/images/favicon.ico">
