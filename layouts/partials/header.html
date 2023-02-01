@@ -23,7 +23,7 @@
 <meta property="og:url" content="{{ .Permalink }}">
 {{ end }}
 <meta name="og:image" content="{{ if .Params.og_image }}{{ .Site.BaseURL }}{{.Params.og_image}}{{ else }}https://ntalbs.github.io/images/ntalbs.jpg{{ end }}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="{{ if .Params.og_image }}summary_large_image{{ else }}summary{{ end }}">
 <meta name="twitter:site" content="@ntalbs">
 <meta name="twitter:creator" content="@ntalbs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
