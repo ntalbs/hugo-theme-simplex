@@ -6,6 +6,7 @@
     </div>
     <div class="navbar-items collapsed" id="nav-items">
       <ul>
+        <li><input id="search" type="search" placeholder="Search this site" autocomplete="off"></li>
         {{ range .Site.Params.menu.items }}
         <li><a class="unselectable" href="{{ .path }}">{{ .label }}</a></li>
         {{ end }}
