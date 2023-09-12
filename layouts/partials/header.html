@@ -17,6 +17,7 @@
 
 <meta name="description" content="{{ if eq .IsHome true }}{{ .Site.Params.desc }}{{ else }}{{ .Summary }}{{ end }}">
 
+<meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords  "," }}{{ end }}">
 {{ if eq .IsHome false }}
 <meta property="og:title" content="{{ .Title }} {{ .Site.Title }}">
 <meta property="og:site_name"  content="{{ .Site.Title }}">
