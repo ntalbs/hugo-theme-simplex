@@ -9,13 +9,12 @@
 
  gtag('config', '{{ .Site.GoogleAnalytics }}');
 </script>
-<meta charset="UTF-8">
-<meta http-equiv='content-language' content='ko-KR'>
 {{ if .Site.Params.Google.SiteVerification }}
 <meta name="google-site-verification" content="{{ .Site.Params.Google.SiteVerification }}">
 {{ end }}
 
-
+<meta charset="UTF-8">
+<meta http-equiv='content-language' content='ko-KR'>
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify }}{{ else }}{{ .Site.Params.desc }}{{ end }}">
 <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords  "," }}{{ end }}">
 {{ if eq .IsHome false }}
