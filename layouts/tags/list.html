@@ -7,6 +7,7 @@
   <body>
     {{ partial "page-top" . }}
     <main class="container" role="main" >
+      <h1>Tags</h1>
       <div class="widget">
         <ul class="tag-box inline list-unstyled">
           {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
