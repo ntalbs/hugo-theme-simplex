@@ -8,6 +8,7 @@
   <body>
     {{ partial "page-top" . }}
     <main class="container" role="main">
+      <h1>Archive</h1>
       <div class="widget">
         <ul class="tag-box inline list-unstyled">
           {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
