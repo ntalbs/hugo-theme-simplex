@@ -7,6 +7,7 @@
   <body>
     {{ partial "page-top" . }}
     <main class="container" role="main">
+      <h1 class="none">Posts</h1>
       {{ range sort .Paginator.Pages }}
       <article class="post {{ if .Params.math }}with-math{{ end }}">
         <header class="post-header">
@@ -17,9 +18,9 @@
             <a href="/tags/{{ . | lower }}/">{{ . }}</a>
             {{ end }}
           </span>
-          <h1 class="post-title">
+          <h2 class="post-title">
             <a href="{{ .RelPermalink }}"{{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a>
-          </h1>
+          </h2>
         </header>
         <section class="post-excerpt">
           <p>

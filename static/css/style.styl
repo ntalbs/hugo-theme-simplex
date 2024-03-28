@@ -36,12 +36,15 @@ h1, h2, h3, h4, h5, h6
   font-weight bold
   color var(--heading)
 
-h1
+h1, h2.post-title
   font-size 2.8rem
   line-height 1.2em
   letter-spacing -2px
   margin-left -2px
   border var(--h1-border)
+
+h1.none
+  display none
 
 h2
   font-size 2.4rem
@@ -407,7 +410,7 @@ ul.pagination
   margin-top 0
   margin-bottom 0
   color var(--post-meta)
-  +h1
+  +h1, +h2
     margin-top 0
 
 .draft
