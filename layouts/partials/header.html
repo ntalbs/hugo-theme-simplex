@@ -30,5 +30,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Title }}{{ if eq .IsHome false }} {{ .Site.Title }}{{ end }}</title>
 <link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/highlight.css">
+{{ $styles := resources.Get "/css/style.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{ $highlight := resources.Get "/css/highlight.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $highlight.RelPermalink }}">
