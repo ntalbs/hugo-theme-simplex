@@ -77,7 +77,7 @@ function makeLight () {
   root.style.setProperty('--post-meta', "#aaa")
   root.style.setProperty('--tagbox', "#555")
 
-  root.style.setProperty('--line', "#ebf2f6")
+  root.style.setProperty('--line', "#ddd")
   root.style.setProperty('--circle', "#fff")
   root.style.setProperty('--navbar-bg', "#444")
   root.style.setProperty('--footer-bg', "#333")
