@@ -1,8 +1,6 @@
 {{ $js := resources.Get "/js/mode.js" | minify }}
 <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
 {{ if (not .Draft) }}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ .Site.Params.Google.AdSense }}" crossorigin="anonymous"></script>
-
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
 <script>
@@ -35,4 +33,4 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 {{ $highlight := resources.Get "/css/highlight.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $highlight.RelPermalink }}">
-<link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+<link rel="stylesheet" href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css">
