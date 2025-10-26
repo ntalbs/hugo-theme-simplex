@@ -20,6 +20,9 @@
           <h1 class="post-title{{ if .Draft }} draft{{ end }}">
             {{ .Title }}
           </h1>
+          {{ if .Params.image }}
+          <img src ="{{ .Params.image }}">
+          {{ end }}
         </header>
         <section class="post-content">
           {{ .Content }}
