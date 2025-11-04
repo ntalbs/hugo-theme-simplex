@@ -24,7 +24,7 @@
       <ul id="{{ .Key }}" class="in">
         {{ range .Pages }}
         <li class="listing-item">
-          <p class="post-title">
+          <p class="post-title  {{if .Params.math }} with-math {{ end }}">
             <a href="{{ .RelPermalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a><br>
             <small class="post-meta">
               <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">

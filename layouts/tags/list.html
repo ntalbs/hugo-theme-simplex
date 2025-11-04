@@ -23,7 +23,7 @@
       <ul>
         {{ range .Data.Pages }}
         <li class="listing-item">
-          <p class="post-title">
+          <p class="post-title {{if .Params.math }} with-math {{ else }} nah {{ end }}">
             <a href="{{ .RelPermalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a><br>
             <small class="post-meta">
               <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
@@ -44,7 +44,7 @@
       <ul id="modal-{{ $name | lower}}" class="in">
         {{ range $taxonomy }}
         <li class="listing-item">
-          <p class="post-title">
+          <p class="post-title {{if .Params.math }} with-math {{ else }} nope {{ end }}">
             <a href="{{ .RelPermalink }}" {{ if .Draft }} class="draft"{{ end }}>{{ .Title }}</a><br>
             <small class="post-meta">
               <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">
@@ -60,5 +60,6 @@
     </main>
     {{ partial "page-bottom" . }}
     {{ partial "footer" . }}
+    {{ partial "mathjax" . }}
   </body>
 </html>
