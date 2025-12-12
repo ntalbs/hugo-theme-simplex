@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6
   margin-top 1.6em
 
 h1, h2.post-title
-  font-size 2.8rem
+  font-size clamp(2.4rem, 7vw + 1rem, 2.8rem)
   line-height 1.2em
   letter-spacing -2px
   margin-left -2px
@@ -48,22 +48,21 @@ h1.none
   display none
 
 h2
-  font-size 2.4rem
+  font-size clamp(2rem, 6vw + 1rem, 2.4rem)
   line-height 1.2em
   letter-spacing -1px
 
 h3
-  font-size 2.0rem
+  font-size clamp(1.8rem, 5vw + 1rem, 2rem)
 
 h4
-  font-size 1.8rem
+  font-size clamp(1.6rem, 4vw + 1rem, 1.8rem)
 
 h5
-  font-size 1.6rem
-  font-weight normal
+  font-size clamp(1.4rem, 3vw + 1rem, 1.6rem)
 
 h6
-  font-size 1.4rem
+  font-size clamp(1.2rem, 2vw + 1rem, 1.4rem)
 
 img.invert-safe
   filter invert(--invert-amt)
@@ -729,9 +728,6 @@ selection
     float none
 
 @media only screen and (max-width: 500px)
-  .blog-logo img
-    max-height 80px
-
   #main-nav
     font-size 0.7em
     margin-right 16px
@@ -757,26 +753,6 @@ selection
 
   .page-head .post-title
     font-size 2.5rem
-
-  h1
-    font-size 2.4rem
-    line-height 1.1em
-    letter-spacing -1px
-
-  h2
-    font-size 2rem
-
-  h3
-    font-size 1.8rem
-
-  h4
-    font-size 1.6rem
-
-  h5
-    font-size 1.4rem
-
-  h6
-    font-size 1.2rem
 
   .post img.right
     float none
