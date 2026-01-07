@@ -1,7 +1,5 @@
 /* style.styl */
 
-@import "normalize.css"
-
 /* General - Setting up some base styles */
 
 *
@@ -13,12 +11,14 @@ html
   font-size 10px
   height 100%
   max-height 100%
+  font-family sans-serif
 
 body
   font-size 1.9rem
   line-height 1.6em
   height 100%
   max-height 100%
+  margin 0
   background-color var(--background)
 
 .clearfix
@@ -213,7 +213,7 @@ twitter-widget, video
 
 /* General - The main styles for thie theme */
 .navbar
-  font-size 1.8rm
+  font-size 1.8rem
   border 1px solid transparent
   margin-bottom 20px
   min-height 50px
@@ -278,6 +278,7 @@ twitter-widget, video
         text-shadow 0 0 8px
         svg
           filter drop-shadow(0px 0px 5px #fff)
+          borther 0
       &#mode-switch
         background rgba(0, 0, 0, 0)
         display inline-block
