@@ -19,9 +19,7 @@
       <!-- Ranges through content/post/*.md -->
       {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
 
-      <p class="archive-ul" data-toggle="collapse" data-target="#{{ .Key }}">
-        {{ .Key }}&nbsp;<b class="caret"></b>
-      </p>
+      <h2> {{ .Key }} </h2>
       <ul id="{{ .Key }}" class="in">
         {{ range .Pages }}
         <li class="listing-item">

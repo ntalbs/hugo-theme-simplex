@@ -44,7 +44,6 @@ function makeDark () {
   root.style.setProperty('--box-bg', "#212d39")
   root.style.setProperty('--progress-bg', 'rgba(0,0,0,0.5)')
 
-  root.style.setProperty('--archive-ul', "#888")
   root.style.setProperty('--post-meta', "#666")
   root.style.setProperty('--tagbox', "#888")
 
@@ -61,8 +60,8 @@ function makeDark () {
 function makeLight () {
   let root = document.documentElement;
   root.style.setProperty('--background', "#f5f5f5")
-  root.style.setProperty('--text', "")
-  root.style.setProperty('--heading', "")
+  root.style.setProperty('--text', "#000")
+  root.style.setProperty('--heading', "#444")
   root.style.setProperty('--link', "#666")
   root.style.setProperty('--link-hover', "#999")
   root.style.setProperty('--inline-code-bg', "#eee")
@@ -70,7 +69,6 @@ function makeLight () {
   root.style.setProperty('--box-bg', "#eee")
   root.style.setProperty('--progress-bg', 'rgba(80,80,80,0.5)')
 
-  root.style.setProperty('--archive-ul', "#444")
   root.style.setProperty('--post-meta', "#aaa")
   root.style.setProperty('--tagbox', "#555")
 

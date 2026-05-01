@@ -19,7 +19,7 @@
       </div>
 
       {{ if eq .Kind "term" }}
-      <p class="archive-ul">{{ .Title }}</p>
+      <h2> {{ .Title }} </h2>
       <ul>
         {{ range .Data.Pages }}
         <li class="listing-item">
@@ -38,9 +38,7 @@
 
       {{ if eq .Kind "taxonomy"}}
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <p class="archive-ul" data-toggle="collapse" data-target="#modal-{{ $name | lower }}">
-        {{ $name }}&nbsp;<b class="caret"></b>
-      </p>
+      <h2> {{ $name }} </h2>
       <ul id="modal-{{ $name | lower}}" class="in">
         {{ range $taxonomy }}
         <li class="listing-item">
