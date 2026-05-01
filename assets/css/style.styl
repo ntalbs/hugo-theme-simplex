@@ -221,6 +221,8 @@ twitter-widget, video
 
 /* General - The main styles for thie theme */
 .navbar
+  display flex
+  align-items center
   font-size 1.8rem
   border 1px solid transparent
   margin-bottom 20px
@@ -234,16 +236,15 @@ twitter-widget, video
   transform translate3d(0,0,0)
   -webkit-transform translate3d(0,0,0)
   z-index 1030
-
-.navbar-header
-  float left
-
-.navbar-toggle
-  display none
+  .container
+    display flex
+    align-items center
+    width 100%
 
 .navbar-brand
-  float left
+  margin-right auto
   text-decoration none
+  white-space nowrap
   color #bbb
   font-size 18px
   height 50px
@@ -256,42 +257,36 @@ twitter-widget, video
     color #eee
 
 .navbar-items
-  float right
-  margin 0
-  list-style none
-  ul
-    margin 0
-  li
-    display block
-    position relative
-    float left
+  margin-left auto
+  display flex
+  align-items center
+  .nav-item
+    margin 0 clamp(5px, 4vw, 10px)
     font-size 1.8rem
-    padding 10px 0 10px 20px
-    display block
-    position relative
-    input
-      font-size 1.5rem
-      padding 5px
-      border none
-      border-radius 5px
-      outline 0
-      background-color lightgray
-      max-width 180px
-    a
-      color #bbb
-      text-decoration none
-      &:focus, &:hover
-        color #eee
-        outline none
-        text-shadow 0 0 8px
-        svg
-          filter drop-shadow(0px 0px 5px #fff)
-          borther 0
-      &#mode-switch
-        background rgba(0, 0, 0, 0)
-        display inline-block
-        padding-top 2px
+
+  input.nav-item
+    font-size 1.5rem
+    padding 5px
+    border none
+    border-radius 5px
+    outline 0
+    background-color lightgray
+    max-width 180px
+  a.nav-item
+    color #bbb
+    text-decoration none
+    &:focus, &:hover
+      color #eee
+      outline none
+      text-shadow 0 0 8px
+      svg
+        filter drop-shadow(0px 0px 5px #fff)
         border 0
+  #mode-switch.nav-item
+    display inline-flex
+    background rgba(0, 0, 0, 0)
+    padding-top 2px
+    border 0
 
 .page-head
   position relative
@@ -617,41 +612,10 @@ twitter-widget, video
   &.in
     overflow hidden
 
-@media only screen and (max-width: 640px)
-  .navbar-header
-    float none
-  .navbar-toggle
-    display inline
-    float right
-    color #ccc
-    border none
-    outline none
-    background-color transparent
-    font-size 3.5rem
-    letter-spacing -3px
-    transition all 0.3s ease
-    &.rotated
-      transform rotate(45deg)
+@media only screen and (max-width: 600px)
   .navbar-items
-    clear both
-    float none
-    heigth 1px
-    margin-left -15px
-    margin-right -15px
-    overflow-y auto
-    border-color #333
-    box-shadow inset 0 1px 0 rgba(255,255,255,0.1)
-    border-top 1px solid transparent
-    max-height 500px
-    transition max-height .3s ease
-    &.collapsed
-      max-height 0
-      transition:  max-height 0s ease
-    ul
-      padding 0
-  .navbar li
-    float none
-    padding 10px 20px
+    #search
+      display none
 
   img.right
     float none
