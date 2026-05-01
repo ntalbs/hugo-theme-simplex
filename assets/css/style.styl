@@ -335,8 +335,6 @@ ul.pagination
   hyphens auto
   li
     text-align left
-    img
-      max-width 100%
   /* Add a little circle in the middle of the border-bottom on our .post
      just for the lolz and stylepoints. */
 
@@ -522,25 +520,6 @@ ul.pagination
     vertical-align top
     font-weight bold
 
-.article-nav-title
-  display inline-block
-  vertical-align middle
-  margin 0
-  padding 0
-  white-space nowrap
-  overflow hidden
-  text-overflow ellipsis
-
-.share
-  padding-bottom 20px
-  margin-bottom 20px
-  border-bottom 1px solid #ebf2f6
-  a
-    text-decoration none
-
-.width-over-400
-  display inline
-
 /* Pagination */
 
 #page-nav
@@ -660,13 +639,6 @@ ul.pagination
   .post
     font-size 0.9em
     line-height 1.6em
-    img
-      max-width 100%
-  .post-template
-    .post
-      padding-bottom 1rem
-    .post-header
-      padding 40px 0
   .page-head .post-title
     font-size 4rem
   .navbar-items li
@@ -719,72 +691,21 @@ ul.pagination
     float none
 
 @media only screen and (max-width: 500px)
-  #main-nav
-    font-size 0.7em
-    margin-right 16px
-
-  #main-nav ul li
-    margin-left 10px
-
-  .inner,
-  .pagination
-    width auto
-    margin-left 16px
-    margin-right 16px
-
   .post
     width auto
     font-size 0.8em
     line-height 1.6em
-    img
-      max-width 100%
-
   .blog-description
     font-size 1.0rem
 
   .page-head .post-title
     font-size 2.5rem
 
-  .post img.right
-    float none
-
   .listing-item .post-title
     font-size 1.6rem
-
-  .post-template
-    .post
-      padding-bottom 0
-    .post-header
-      padding 30px 0
 
   .post-meta
     font-size 1.3rem
 
   .post-footer
     padding 2.5rem 0
-    .author
-      margin 0 0 2rem 0
-      padding 0 0 1.6rem 0
-      border-bottom #EBF2F6 1px dashed
-    .share
-      // position static
-      // width auto
-      a
-        margin 1.4rem 0.8rem 0 0.8rem
-
-  .article-nav-title
-    max-width 100%
-
-  .older-posts, .newer-posts
-    position static
-    margin 10px 0
-
-  .extend
-    display block
-
-  .page-number
-    display inline-block
-
-  .page-bottom
-    margin-top 6rem
-    font-size 1.1rem
