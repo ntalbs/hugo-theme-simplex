@@ -2,27 +2,21 @@
 
 /* General - Setting up some base styles */
 
-*
-  -webkit-box-sizing border-box
-  -moz-box-sizing border-box
+*, *:before, *.after
   box-sizing border-box
+
+html, body
+  height 100%
+  margin 0
 
 html
   font-size 10px
-  height 100%
-  max-height 100%
-  font-family sans-serif
 
 body
   font-size clamp(1.3rem, 5vw, 1.9rem)
   line-height 1.6em
-  height 100%
-  max-height 100%
-  margin 0
   background-color var(--background)
-
-.clearfix
-  overflow
+  font-family sans-serif
 
 .unselectable
   user-select none
@@ -40,7 +34,7 @@ h1, h2, h3, h4, h5, h6
 h1, h2.post-title
   font-size clamp(2.4rem, 7vw + 1rem, 2.8rem)
   line-height 1.2em
-  letter-spacing -2px
+  letter-spacing -1px
   margin-left -2px
   border var(--h1-border)
 
@@ -122,7 +116,6 @@ figure
     font-size 0.6em
 
 blockquote
-  box-sizing border-box
   margin 1.6em 0 1.6em 0
   padding 0.4em 0.6em
   color var(--text)
@@ -133,17 +126,6 @@ blockquote
   p
     text-align left
     margin 0
-  small
-    display inline-block
-    margin 0.8em 0 0.8em 1.5em
-    font-size:0.8em
-    color #ccc
-    &:before
-      content '\2014 \00A0'
-  cite
-    font-weight bold
-    a
-      font-weight normal
   &.right-align
     text-align right
 
@@ -168,8 +150,6 @@ p code, li code
   text-align left
 
 pre
-  -moz-box-sizing border-box
-  box-sizing border-box
   margin 0
   padding 0
   font-family SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
@@ -198,7 +178,6 @@ pre
 
 table
   font-size 1.7rem
-  box-sizing border-box
   margin 1.6em 0
   width 100%
   max-width 100%
@@ -224,36 +203,22 @@ twitter-widget, video
   display flex
   align-items center
   font-size 1.8rem
-  border 1px solid transparent
   margin-bottom 20px
   min-height 50px
   background-color var(--navbar-bg)
-  border-color #333
-  border-width 0 0 1px
-  top 0
-  left 0
-  right 0
-  transform translate3d(0,0,0)
-  z-index 1030
   .container
     display flex
     align-items center
-    width 100%
-
-.navbar-brand
-  margin-right auto
-  text-decoration none
-  white-space nowrap
-  color #bbb
-  font-size 18px
-  height 50px
-  line-height 20px
-  padding 15px
-  margin-left -15px
-  &:focus, &:hover
-    text-shadow 0 0 5px
+  .navbar-brand, a.nav-item
     text-decoration none
-    color #eee
+    color #ccc
+    font-size 1.8rem
+    &:focus, &:hover
+      text-shadow 0 0 5px
+      color #eee
+      svg
+        filter drop-shadow(0px 0px 5px #fff)
+        border 0
 
 .navbar-items
   margin-left auto
@@ -261,7 +226,6 @@ twitter-widget, video
   align-items center
   .nav-item
     margin 0 clamp(5px, 4vw, 10px)
-    font-size 1.8rem
 
   input.nav-item
     font-size 1.5rem
@@ -271,16 +235,7 @@ twitter-widget, video
     outline 0
     background-color lightgray
     max-width 180px
-  a.nav-item
-    color #bbb
-    text-decoration none
-    &:focus, &:hover
-      color #eee
-      outline none
-      text-shadow 0 0 8px
-      svg
-        filter drop-shadow(0px 0px 5px #fff)
-        border 0
+
   #mode-switch.nav-item
     display inline-flex
     background rgba(0, 0, 0, 0)
@@ -289,7 +244,6 @@ twitter-widget, video
 
 .page-head
   position relative
-  box-sizing border-box
   display table
   width 100%
   height 50px
@@ -301,11 +255,10 @@ twitter-widget, video
   color #aaa
 
 .container
-  max-width 720px
+  max-width 690px
   margin-left auto
   margin-right auto
-  padding-left 15px
-  padding-right 15px
+  width 100%
 
 .post .post-excerpt
   h1,h2,h3,h4,h5,h6,img,blockquote
@@ -318,11 +271,9 @@ twitter-widget, video
   padding 0
   li
     display inline-block
-    margin 0
     a
       padding 3px 6px
       text-decoration none
-
 
 /* Every post, on every page */
 .post
@@ -336,9 +287,9 @@ twitter-widget, video
   hyphens auto
   li
     text-align left
+
   /* Add a little circle in the middle of the border-bottom on our .post
      just for the lolz and stylepoints. */
-
   &:after
     display block
     content ""
@@ -350,8 +301,6 @@ twitter-widget, video
     left 50%
     margin-left -5px
     background var(--background)
-    -webkit-border-radius 100%
-    -moz-border-radius 100%
     border-radius 100%
     box-shadow var(--background) 0 0 0 5px
 
@@ -369,9 +318,6 @@ twitter-widget, video
   width 100%
   background var(--progress-bg)
   z-index 900
-  -moz-transition all .3s ease
-  -ms-transition all .3s ease
-  -o-transition all .3s ease
   transition all .3s ease
 
 #scroll-title
@@ -381,27 +327,11 @@ twitter-widget, video
   padding 5px 0
 
 #bar
-  // background-color #089378
-  // background-color #0898b3
-  background-color #888
   width 0
   height 100%
   position absolute
   top 0
-  -webkit-transition all .3s
-  -moz-transition all .3s
-  -o-transition all .3s
-  -ms-transition all .3s
   transition all .3s
-
-/* Every post in `archive` page */
-.post-archive
-  clear right
-  text-align left
-  position relative
-  padding-bottom 2rem
-  word-break break-word
-  hyphens auto
 
 .post-title a
   text-decoration none

@@ -50,7 +50,7 @@ function makeDark () {
   root.style.setProperty('--line', "#444")
   root.style.setProperty('--circle', "#444")
 
-  root.style.setProperty('--navbar-bg', "#1c2733")
+  root.style.setProperty('--navbar-bg', "#2B3642")
   root.style.setProperty('--footer-bg', "#242933")
 
   root.style.setProperty('--invert-amt', '0.84')
