@@ -37,12 +37,14 @@
             {{ end }}
           </div>
           {{ end }}
-          <nav id="article-nav">
+          <nav class="article-nav">
             {{ with .Next }}
-            <a class="article-nav-link-wrap previous" href="{{.RelPermalink}}" id="article-nav-newer"> {{.Title}}</a>
+            <a class="next" href="{{.RelPermalink}}"> {{.Title}}</a>
+            {{ else }}
+            &nbsp;
             {{ end }}
             {{ with .Prev }}
-            <a class="article-nav-link-wrap next" href="{{.RelPermalink}}" id="article-nav-older"> {{.Title}}</a>
+            <a class="prev" href="{{.RelPermalink}}"> {{.Title}}</a>
             {{ end }}
           </nav>
         </footer>

@@ -89,9 +89,9 @@
     } else if (e.keyCode === 75 /* k */ || (e.ctrlKey && e.keyCode === 80 /* C-p */)) {
       window.scrollBy(0, -100)
     } else if (e.keyCode === 72 && !(e.ctrlKey || e.metaKey) /* h */ || (e.ctrlKey && e.keyCode === 66)) {
-      prevPage()
-    } else if (e.keyCode === 76 && !(e.ctrlKey || e.metaKey) /* l */ || (e.ctrlKey && e.keyCode === 70)) {
       nextPage()
+    } else if (e.keyCode === 76 && !(e.ctrlKey || e.metaKey) /* l */ || (e.ctrlKey && e.keyCode === 70)) {
+      prevPage()
     } else if (e.keyCode === 191) { // '/'
       window.scrollTo(0,0)
       e.preventDefault()
@@ -105,7 +105,7 @@
 
   function prevPage() {
     if (isPostPage(window.location.pathname)) {
-      let a = document.querySelector('.previous')
+      let a = document.querySelector('.article-nav .prev')
       if (!!a) window.location = a.href
     } else {
       let a = document.querySelector('.page-item+.active')
@@ -117,7 +117,7 @@
 
   function nextPage() {
     if (isPostPage(window.location.pathname)) {
-      let a = document.querySelector('.next')
+      let a = document.querySelector('.article-nav .next')
       if (!!a) window.location = a.href
     } else {
       let a = document.querySelector('.page-item+.active')
