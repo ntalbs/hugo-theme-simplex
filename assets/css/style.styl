@@ -234,7 +234,6 @@ twitter-widget, video
   left 0
   right 0
   transform translate3d(0,0,0)
-  -webkit-transform translate3d(0,0,0)
   z-index 1030
   .container
     display flex
@@ -467,25 +466,19 @@ twitter-widget, video
       white-space pre
 
 #article-nav
-  border-top 1px solid #ebf2f6
-  padding-top 20px
-  &:after
-    clear both
+  margin-top 40px
+  display flex
+  justify-content space-between
 
 #article-nav-newer
-  float left
   text-decoration none
-  margin-right 10px
   &:before
     content "< "
     vertical-align top
     font-weight bold
 
 #article-nav-older
-  float right
   text-decoration none
-  text-align right
-  margin-left 10px
   &:after
     content " >"
     vertical-align top
