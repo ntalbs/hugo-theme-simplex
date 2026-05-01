@@ -293,8 +293,8 @@ twitter-widget, video
   height 50px
 
 .blog-description
-  font-size 1.6rem
-  line-height 2rem
+  font-size clamp(1rem, 2vw, 1.6rem)
+  line-height clamp(1rem, 2vw, 2rem)
   margin-top -15px
   color #aaa
 
@@ -310,7 +310,7 @@ twitter-widget, video
   h1,h2,h3,h4,h5,h6,img,blockquote
     display none
 
-ul.pagination
+.pagination
   display block
   text-align center
   list-style-type none
@@ -633,9 +633,6 @@ ul.pagination
     -webkit-box-sizing border-box
     -moz-box-sizing border-box
     box-sizing border-box
-  .blog-description
-    font-size 1.5rem
-    line-height 1.3em
   .post
     font-size 0.9em
     line-height 1.6em
@@ -645,8 +642,6 @@ ul.pagination
     padding 10px 6px
 
 @media only screen and (max-width: 640px)
-  .blog-description
-    font-size 1.2rem
   .navbar-header
     float none
   .navbar-toggle
@@ -695,8 +690,6 @@ ul.pagination
     width auto
     font-size 0.8em
     line-height 1.6em
-  .blog-description
-    font-size 1.0rem
 
   .page-head .post-title
     font-size 2.5rem
