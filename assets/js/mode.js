@@ -27,9 +27,6 @@ function switchMode (mode, disqus) {
     monokai()
   }
 
-  let navBar = document.getElementById('nav-items')
-  navBar.classList.add('collapsed')
-
   if (disqus) {
     resetDisqus()
   }
