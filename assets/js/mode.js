@@ -16,19 +16,27 @@ function setMode (mode) {
   document.querySelector("#mode-switch>svg.icon-sun").style.display = (mode===dark ? 'inline-block' : 'none')
 }
 
-function switchMode (mode, disqus) {
+function changeGiscusTheme(theme) {
+  const iframe = document.querySelector('iframe.giscus-frame');
+  if (!iframe) return;
+
+  iframe.contentWindow.postMessage(
+    { giscus: { setConfig: { theme: theme } } },
+    'https://giscus.app'
+  );
+}
+
+function switchMode (mode) {
   if (mode === light) {
     setMode(light)
     makeLight()
     xcode()
+    changeGiscusTheme('light_protanopia');
   } else {
     setMode(dark)
     makeDark()
     monokai()
-  }
-
-  if (disqus) {
-    resetDisqus()
+    changeGiscusTheme('dark_dimmed');
   }
 }
 
