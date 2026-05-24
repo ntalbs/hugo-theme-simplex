@@ -109,7 +109,7 @@
       if (!!a) window.location = a.href
     } else {
       let a = document.querySelector('.page-item+.active')
-          .previousElementSibling
+          .nextElementSibling
           .firstElementChild
       if (!!a.href) window.location = a.href
     }
@@ -121,7 +121,7 @@
       if (!!a) window.location = a.href
     } else {
       let a = document.querySelector('.page-item+.active')
-          .nextElementSibling
+          .previousElementSibling
           .firstElementChild
       if (!!a.href) window.location = a.href
     }
