@@ -42,6 +42,7 @@ function switchMode (mode) {
 
 function makeDark () {
   let root = document.documentElement;
+  root.style.setProperty('--foreground', "#eee")
   root.style.setProperty('--background', "#151d26")
   root.style.setProperty('--text', "#bbb")
   root.style.setProperty('--heading', "#eee")
