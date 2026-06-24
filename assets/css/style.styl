@@ -84,8 +84,15 @@ a
   &:hover
     color var(--link-hover)
 
-.footnotes ol li::marker
-  font-size 1.5rem
+.footnotes
+  hr
+    width 100px
+    margin-left 0
+    border-top 1px solid var(--line)
+    margin-top 50px
+    margin-bottom 0
+  ol li::marker
+    font-size 1.5rem
 
 .footnote-ref
   font-size 1.5rem
@@ -269,14 +276,6 @@ twitter-widget, video
   margin-left auto
   margin-right auto
   width 100%
-
-.footnotes:before
-  display block
-  content ""
-  width 100px
-  height 20px
-  border-bottom var(--line) 1px solid
-  position absolute
 
 .post .post-excerpt
   h1,h2,h3,h4,h5,h6,img,blockquote
