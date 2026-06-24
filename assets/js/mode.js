@@ -36,7 +36,7 @@ function switchMode (mode) {
     setMode(dark)
     makeDark()
     monokai()
-    changeGiscusTheme('dark_dimmed');
+    changeGiscusTheme('dark_protanopia');
   }
 }
 
