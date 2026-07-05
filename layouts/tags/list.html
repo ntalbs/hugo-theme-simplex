@@ -38,7 +38,7 @@
 
       {{ if eq .Kind "taxonomy"}}
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <h2> {{ $name }} </h2>
+      <h2> {{ $name | title }} </h2>
       <ul id="modal-{{ $name | lower}}" class="in">
         {{ range $taxonomy }}
         <li class="listing-item">
