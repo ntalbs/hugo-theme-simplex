@@ -415,9 +415,12 @@ twitter-widget, video
 .article-nav
   margin-top 40px
   display flex
-  justify-content space-between
+  flex-wrap wrap
   .next, .prev
     text-decoration none
+  .prev
+    margin-left auto
+    padding-left 3rem
   .next:before
       content "< "
       vertical-align top
