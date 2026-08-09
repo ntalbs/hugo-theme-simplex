@@ -2,7 +2,7 @@ const light = 'light'
 const dark  = 'dark'
 
 export function getMode () {
-  return localStorage.getItem('currentMode') || light;
+  return localStorage.getItem('mode') || light;
 }
 
 export function switchMode (mode) {
@@ -15,7 +15,7 @@ export function switchMode (mode) {
 
 function setMode (mode) {
   document.documentElement.dataset.theme = mode;
-  localStorage.setItem('currentMode', mode);
+  localStorage.setItem('mode', mode);
   changeGiscusTheme(mode + '_protanopia');
 }
 
@@ -28,3 +28,9 @@ function changeGiscusTheme(theme) {
     'https://giscus.app'
   );
 }
+
+let modeSwitch = document.getElementById('mode-switch');
+
+modeSwitch.addEventListener('click', (e) => {
+  switchMode(getMode() === 'light' ? 'dark' : 'light')
+});
