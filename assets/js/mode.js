@@ -3,7 +3,7 @@ const moon = '☾'
 const light = 'light'
 const dark  = 'dark'
 
-function getMode () {
+export function getMode () {
   let mode = localStorage.getItem('currentMode')
   return !mode ? light: mode;
 }
@@ -26,7 +26,7 @@ function changeGiscusTheme(theme) {
   );
 }
 
-function switchMode (mode) {
+export function switchMode (mode) {
   if (mode === light) {
     setMode(light)
     makeLight()
