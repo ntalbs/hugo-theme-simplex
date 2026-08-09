@@ -36,7 +36,7 @@
 {{ $css := slice
    (resources.Get "css/style.css")
    (resources.Get "css/highlight.css")
-   | resources.Concat "css/main.css"
+   | resources.Concat "css/style.css"
    | minify
    | fingerprint
 }}
