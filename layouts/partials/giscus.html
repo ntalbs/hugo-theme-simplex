@@ -22,7 +22,7 @@
 
 <script>
  (function() {
-   let mode = getMode();
+   let mode = localStorage.getItem('currentMode') || 'light';
    let targetTheme = mode==='light' ? 'light_protanopia' : 'dark_protanopia';
 
    let template = document.getElementById('giscus-template');
