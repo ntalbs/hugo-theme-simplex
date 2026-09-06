@@ -3,7 +3,7 @@
  document.documentElement.dataset.theme = mode;
 </script>
 
-{{ if (not .Draft) }}
+{{ if hugo.IsProduction }}
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
 <script>
