@@ -1,7 +1,7 @@
 {{ $js := resources.Get "/js/index.js" | js.Build }}
 
 {{ if hugo.IsProduction }}
-{{ $js = $js | minify | fingerprint }}
+{{ $js = $js | minify }}
 {{ end }}
 
-<script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
+<script src="{{ $js.RelPermalink }}?v={{ now.Unix }}" type="text/javascript"></script>
