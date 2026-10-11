@@ -10,6 +10,7 @@
       <h1>Archive</h1>
       <div class="widget">
         <ul class="tag-box inline list-unstyled">
+          <li><a href="/archive">All</a></li>
           {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
           <li><a href="/{{ .Key }}/">{{ .Key }}</a></li>
           {{ end }}
