@@ -12,14 +12,17 @@
         <ul class="tag-box inline list-unstyled">
           {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
           <li>
-            <a href="/tags/{{ $name | lower }}/">{{ $name | humanize }}<sup>{{ $taxonomy.Count }}</sup></a>
+            <a href="/tags/{{ $name | lower }}/">
+              {{ partial "format-tag.html" $name }}
+              <sup>{{ $taxonomy.Count }}</sup>
+            </a>
           </li>
           {{ end }}
         </ul>
       </div>
 
       {{ if eq .Kind "term" }}
-      <h2> {{ .Title }} </h2>
+      <h2>{{ partial "format-tag.html" .Title }}</h2>
       <ul>
         {{ range .Data.Pages }}
         <li class="listing-item">
@@ -38,7 +41,7 @@
 
       {{ if eq .Kind "taxonomy"}}
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <h2> {{ $name | title }} </h2>
+      <h2> {{ partial "format-tag.html" $name }} </h2>
       <ul id="modal-{{ $name | lower}}" class="in">
         {{ range $taxonomy }}
         <li class="listing-item">

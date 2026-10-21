@@ -1,0 +1,9 @@
+{{ $tagName := . }}
+{{ $tagMap := site.Params.tagMap | default dict }}
+{{ $lowerName := lower $tagName }}
+
+{{ if index $tagMap $lowerName }}
+  {{ index $tagMap $lowerName }}
+{{ else }}
+  {{ $tagName | humanize | title }}
+{{ end }}
