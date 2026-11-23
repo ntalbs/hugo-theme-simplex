@@ -21,10 +21,12 @@
             {{ .Title }}
           </h1>
           {{ with index .Params "feature-image" }}
+          {{ if not .listonly }}
           <figure class="feature-image">
             <img src="{{ .src }}"
                  alt="{{ .alt | default $.Title }}" />
           </figure>
+          {{ end }}
           {{ end }}
         </header>
         <section class="post-content">
