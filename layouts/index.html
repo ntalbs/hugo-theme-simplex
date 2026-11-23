@@ -26,7 +26,11 @@
           {{ with index .Params "feature-image" }}
           <figure class="feature-image">
             <img src="{{ $page.RelPermalink }}{{ .src }}"
-                 alt="{{ .alt | default $.Title }}" />
+                 alt="{{ .alt | default $.Title }}"
+                 {{ if .invertsafe }}
+                 class="invert-safe"
+                 {{ end }}
+            />
           </figure>
           {{ end }}
         </header>
