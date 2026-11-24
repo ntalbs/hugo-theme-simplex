@@ -13,7 +13,9 @@
       <article class="post {{ if .Params.math }}with-math{{ end }}">
         <header class="post-header">
           <span class="post-meta">
-            <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}</time>
+            <time datetime="{{ .Date.Format $.Site.Params.fmt.ISO8601 }}"
+                  itemprop="datePublished">{{ .Date.Format $.Site.Params.fmt.ISO8601 }}
+            </time>
             on
             {{ range .Params.tags }}
             <a href="/tags/{{ . | lower }}/">{{ partial "format-tag.html" . }}</a>
@@ -36,7 +38,9 @@
         </header>
         <section class="post-excerpt">
           <p>
-            {{ .Summary }}
+            {{ .Summary
+            | replaceRE `(?si)<(?:[hH][1-6]|blockquote)\b[^>]*>.*?</(?:[hH][1-6]|blockquote)>` ""
+            | safeHTML }}
           </p>
           {{ if .Truncated }}
           <p>
