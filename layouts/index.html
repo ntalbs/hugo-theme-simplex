@@ -39,11 +39,10 @@
           {{ end }}
         </header>
         <section class="post-excerpt">
-          <p>
-            {{ .Summary
-            | replaceRE `(?si)<(?:[hH][1-6]|blockquote)\b[^>]*>.*?</(?:[hH][1-6]|blockquote)>` ""
-            | safeHTML }}
-          </p>
+          {{ .Summary
+          | replaceRE `(?si)<(?:[hH][1-6]|blockquote)\b[^>]*>.*?</(?:[hH][1-6]|blockquote)>` ""
+          | safeHTML }}
+
           {{ if .Truncated }}
           <p>
             <a class="button is-link" href="{{ .RelPermalink }}" style="height:28px">
