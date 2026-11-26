@@ -31,8 +31,8 @@
           <figure class="feature-image">
             <img src="{{ $page.RelPermalink }}{{ .src }}"
                  alt="{{ .alt | default $.Title }}"
-                 {{ if .invertsafe }}
-                 class="invert-safe"
+                 {{ if .class }}
+                 class="{{ .class }}"
                  {{ end }}
             />
           </figure>
