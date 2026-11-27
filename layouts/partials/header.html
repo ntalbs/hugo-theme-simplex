@@ -1,6 +1,7 @@
 <script>
  const mode = localStorage.getItem('mode') || 'light';
  document.documentElement.dataset.theme = mode;
+ document.documentElement.className = mode;
 </script>
 
 {{ if hugo.IsProduction }}
